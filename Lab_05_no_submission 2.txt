@@ -1,0 +1,279 @@
+//1 
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number of terms");
+    int distance = sc.nextInt(); 
+    double fuel = sc.nextDouble(); 
+    System.out.print(distance / fuel);
+   }
+}
+
+
+//3 
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number of terms");
+    int x1 = sc.nextInt(); 
+    int y1 = sc.nextInt(); 
+    int x2 = sc.nextInt(); 
+    int y2 = sc.nextInt(); 
+    
+    double distance = Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2) );
+    System.out.println("Distance : " + distance);
+    double slope = (y2 - y1)/(x2 - x1);
+    System.out.println("Slope : " + slope);
+    if(slope>0){
+        System.out.println("The slope is positive");
+    }
+    else if(slope < 0){
+        System.out.println("The slope is negetive");
+        
+    }
+    else if(slope == 0){
+        System.out.println("The slope is zero");
+    }
+   }
+}
+
+//4 
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number of terms");
+    double a = sc.nextDouble(); 
+    double b = sc.nextDouble(); 
+    double c = sc.nextDouble(); 
+    double bal = (b*b)-(4*a*c);
+    if(a==0 || bal<0){
+        System.out.println("Root #1 = "+ (((-b)+ (Math.sqrt(bal)))/(2*a)));
+        System.out.println("Root #2 = "+ (((-b)- (Math.sqrt(bal)))/(2*a)));
+        
+    }
+    else{
+        System.out.println("Impossible to calculate");
+    }
+   }
+}
+
+
+// 5
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number of terms");
+   int first = sc.nextInt(); 
+   int  change = sc.nextInt(); 
+   int last = sc.nextInt(); 
+   for (int i = first ; i < last ; i+=change){
+       if(last - i < change){
+           System.out.print(i);
+       }
+       else{
+       System.out.print(i + ",");
+       }
+    }
+   }
+}
+
+// 6 
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number of terms");
+    int num = sc.nextInt(); 
+    double y = 1; 
+    for(int i = 2 ; i<=num; i++){
+        if(i%4 == 0){
+            y -= (1.0/i);
+        }
+        else{
+            y += (1.0/i);
+        }
+    }
+    System.out.println("Y = " + y);
+   }
+}
+
+
+// 7 
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number of terms");
+    int num = sc.nextInt(); 
+    int y = 3 ;  
+       for(int i = 2 ; i <= num ; i++){
+          int term = 3 + (2*i);   
+          if(i%2 == 0){
+             y -= term ; 
+          }
+          else{
+              y += term ; 
+          }
+       }
+       System.out.println(y); 
+    }
+}
+
+
+//8
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number of terms");
+    int num = sc.nextInt();
+    
+      while(num!=1){
+          System.out.print(num + " , ");
+          if(num%2 == 0){
+            num = num /2 ;   
+          }
+          else{
+            num=(num*3)+1; 
+          }
+      }
+      System.out.print(num);
+    }
+}
+
+// problem 9 
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    int num = sc.nextInt(); 
+    int sum = 0 ;
+      while(num!=0){
+        sum += num%10 ;
+        num = num/10;
+      }
+         if(sum%2 == 0){
+        System.out.print("The sum is even");
+         }
+         else{
+             System.out.println("The sum is odd");
+         }
+
+    }
+}
+
+// problem 10 
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    int num = sc.nextInt(); 
+    int i = 3 ; 
+    int sum = 0 ;
+    int digit ; 
+    while(num != 0){
+     digit = num % 10 ; 
+     sum += (digit*(int) Math.pow(2,i));
+     i--; 
+     num = num/10;
+    }
+    
+    System.out.println(sum);
+    
+    }
+}
+
+// problem 11 
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    int n = sc.nextInt(); 
+    int num = sc.nextInt(); 
+    int max = num; 
+    int min = num;
+    int sum = num ; 
+    int count = 1; 
+    
+      for(int i = 2 ; i <= n ; i++){
+        num = sc.nextInt(); 
+        if (num %2 == 0 && num>0){
+            sum+= num;
+            count++; 
+             if(num>max){
+            max = num ; 
+            }
+             else if (num < min){
+            min = num ;
+          }
+        }
+    }
+      
+      if(max < 0 && min < 0){
+      System.out.println("Average : 0 ");
+      }
+      else{
+      System.out.println("Max : "+ max);
+      System.out.println("Min "+ min);
+      System.out.println("Average : "+ (sum/count));
+      }
+    }
+}
+
+
+//12
+
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your number ");
+    int n = sc.nextInt(); 
+    int max = n; 
+    int min = n;
+    int sum = n ; 
+    int count = 1; 
+    while(n!=0){
+        n = sc.nextInt(); 
+      if (n %2 == 0 && n>0){
+            sum+= n;
+            count++; 
+             if(n>max){
+            max = n ; 
+            }
+             else if (n< min){
+            min = n ;
+          }
+        }
+     }
+    if(max < 0 && min < 0){
+      System.out.println("Average : 0 ");
+      }
+      else{
+      System.out.println("Max : "+ max);
+      System.out.println("Min "+ min);
+      System.out.println("Average : "+ (sum/count));
+      } 
+   }
+}
+
+

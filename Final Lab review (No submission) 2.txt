@@ -1,0 +1,772 @@
+//Final Lab review 
+
+// Task A 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void evenChecker(int x){
+	    if(x%2==0 ){
+	        System.out.println("Even !!");
+	    }
+	    else{
+	        System.out.println("Odd !!");
+	    }
+	}
+	
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter your number");
+	int n = sc.nextInt();
+    evenChecker(n);	
+	}
+}
+
+// Task B 
+
+import java.util.Scanner;
+public class Main
+{
+	public static boolean isEven(int x){
+	    if(x%2==0){
+	        return true ; 
+	    }
+	    else{
+	        return false; 
+	    }
+	}
+	
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter your number");
+	int n = sc.nextInt();
+    if(isEven(n)){
+        System.out.println(isEven(n));
+    }
+    else{
+        System.out.println("false");
+    }
+	}
+}
+
+// Task C 
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static boolean isPos(int x) {
+		if(x>0) {
+			return true ;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your number");
+		int n = sc.nextInt();
+
+		boolean result = isPos(n);
+		if(result) {
+			System.out.println(result);
+		}
+		else {
+			System.out.println(result);
+		}
+	}
+}
+
+// Task D 
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static boolean isEven(int x) {
+		if(x%2==0) {
+			return true ;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public static boolean isPos(int y) {
+		if(y>0) {
+			return true ;
+		}
+		else {
+			return false;
+		}
+	}
+
+	public static void sequence(int n ) {
+		if(isPos(n)) {
+				for(int i = 0 ; i<=n; i += 2) {
+					System.out.print(i + " ");
+				}
+		}
+		else if (!isPos(n)){
+		    if(isEven(n)){
+		        for(int i = n-1;i<=-1; i+=2){
+		            System.out.print(i + " ");
+		        }
+		    }
+		    else if(!isEven(n)){
+		        for(int i = n ; i <= -1 ; i+=2){
+		            System.out.print(i + " ");
+		        }
+		    }
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your number");
+		int n = sc.nextInt();
+		sequence(n);
+		}
+	}
+
+
+
+// Task 2
+
+import java.util.Scanner;
+public class Main
+{
+	public static double circleArea(int r) {
+		double area = (3.1416 * r * r) ; 
+		return area; 
+	}
+
+
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your number");
+		int n = sc.nextInt();
+		System.out.println(circleArea(n));
+		}
+	}
+
+
+
+// Task 2 C 
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static double circleArea(int r) {
+		double area = (3.1416 * r * r) ; 
+		return area; 
+	}
+
+    public static double sphereVolume(int r){
+        double volume = ((4*3.1416*(r*r*r)/3));
+        return volume; 
+    }
+    
+    public static void findSpace(int x ,String str){
+        
+        if(str.equals("circle")){
+            System.out.println(circleArea(x));
+        }
+        else if(str.equals("sphere")){
+            System.out.println(sphereVolume(x));
+        }
+        else{
+            System.out.println("Wrong parameter");
+        }
+        
+    }
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your number");
+		int n = sc.nextInt();
+		System.out.println("Enter your object ");
+		String name = sc.next();
+		double area = circleArea(n);
+		double volume = sphereVolume(n);
+	    findSpace(n,name);
+		}
+	}
+
+
+
+// Task 3 
+
+import java.util.Scanner;
+public class Main
+{
+	public static boolean isPrime(int x) {
+		int count = 0 ; 
+		for(int i = 1 ; i <= x ; i++){
+		    if(x%i==0){
+		        count++;
+		    }
+		}
+		if(count == 2){
+		    return true ; 
+		}
+		else{
+		    return false ; 
+		}
+	}
+
+ 
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your number");
+		int n = sc.nextInt();
+	    boolean check = isPrime(n);
+	    System.out.println(check);
+		
+	}
+}
+
+
+// Task 4 
+
+import java.util.Scanner;
+public class Main
+{
+	public static boolean isPerfect(int x) {
+		int sum = 0 ; 
+		for(int i = 1 ; i < x ; i++){
+		    if(x%i==0){
+		        sum+=i;
+		    }
+		}
+		if(sum == x){
+		    return true ; 
+		}
+		else{
+		    return false ; 
+		}
+	}
+
+ 
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your number");
+		int n = sc.nextInt();
+	    boolean check = isPerfect(n);
+	    System.out.println(check);
+		
+	}
+}
+
+// Task 5 
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static double calcTax(int a, int s) {
+		if(a<18 || s < 10000) {
+		    double nothing = 0.0 ; 
+			return nothing;
+		}
+		else if(s>=10000 && s<=20000) {
+			double tax_1 = s * 0.07 ;
+			return tax_1;
+		}
+		else if(s>20000) {
+			double tax_2 = s * 0.14 ;
+			return tax_2;
+		}
+		return 0.0; 
+	}
+
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your age");
+		int n = sc.nextInt();
+		System.out.println("Enter your salary");
+		int s = sc.nextInt();
+		double tax_calc = calcTax(n,s);
+		System.out.println(tax_calc);
+
+	}
+}
+
+// Task 2 String 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void modifyString(String S, String S1 , String S2) {
+	   String res = ""; 
+	   int i = 0 ; 
+	   while( i<S.length()){
+	       boolean match = true ; 
+	       for(int j = 0 ; j < S1.length(); j++){
+	           if(i+j>= S.length()|| S.charAt(i+j) != S1.charAt(j)){
+	               match = false ; 
+	               break; 
+	           }
+	       }
+	       if(match){
+	           res+=S2; 
+	           i+=S1.length(); 
+	       }
+	       else{
+	           res+=S.charAt(i);
+	           i++; 
+	       }
+	   }
+	   System.out.println(res);
+	}
+
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String S = sc.next(); 
+		String S1 = sc.next(); 
+		String S2 = sc.next(); 
+		
+		modifyString(S,S1,S2 );
+
+	}
+}
+
+
+// task 3 (hoynai)
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter how many so called email you want to put ");
+		int N = sc.nextInt();
+		String [] array = new String[N];
+		for(int i = 0 ; i < N ; i++) {
+			array[i] = sc.next();
+		}
+		int counter = 0 ;
+		for(int i = 0 ; i<array.length ; i++) {
+			String email = array[i];
+			boolean isValid = false ;
+			int store = 0 ;
+
+			for(int j = 0 ; j < email.length() ; j++) {
+				if(email.charAt(j)== '@') {
+					if((email.charAt(j-1)  >='a'&& email.charAt(j-1) <='z') && (email.charAt(j+1) >='a' && email.charAt(j+1)
+					        <='z') ) {
+						isValid = true;
+						j = store;
+					}
+					else {
+						isValid = false ;
+					}
+				}
+
+
+				if(email.charAt(j)=='.') {
+					if(j > store && email.charAt(j+1) >= 'a' && email.charAt(j+1)<='z') {
+						isValid = true;
+					}
+					else {
+						isValid = false ;
+					}
+				}
+			}
+
+			if(isValid) {
+				counter++;
+			}
+		}
+		System.out.println(counter);
+	}
+}
+
+// Task 3 (solved by AI , ChatGpt ) 
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter how many emails you want to input: ");
+        int N = sc.nextInt();
+        String[] array = new String[N];
+        
+        for (int i = 0; i < N; i++) {
+            array[i] = sc.next();
+        }
+
+        int counter = 0;
+
+        for (String email : array) {
+            if (isValidEmail(email)) {
+                counter++;
+            }
+        }
+
+        System.out.println(counter);
+    }
+
+    public static boolean isValidEmail(String email) {
+        // Check if the email contains '@' and '.'
+        int atPosition = email.indexOf('@');
+        int dotPosition = email.lastIndexOf('.');
+
+        // Conditions for a valid email:
+        // a) Must contain '@' and '.'
+        // b) '@' must be at least in the second position and before the '.'
+        // c) There must be at least one character after '.'
+
+        if (atPosition > 0 && dotPosition > atPosition + 1 && dotPosition < email.length() - 1) {
+            // Check if the character before '@' is a letter and the character after '@' is a letter
+            if (Character.isLetter(email.charAt(atPosition - 1)) && Character.isLetter(email.charAt(atPosition + 1))) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+
+
+// task 4 
+
+import java.util.Scanner;
+public class Main
+{
+	public static boolean isHappyNumber(int x) {
+		int sum = 0 ;
+		int num = 0 ;
+		while(x!= 1 && x!=4){
+		    while(x!=0){
+		        num = x % 10 ; 
+		        sum+=(num*num);
+		        x = x / 10 ; 
+		    }
+		    x= sum ; 
+		    sum = 0 ;
+		}
+		if(x==1){
+		    return true ; 
+		} 
+		else{
+		    return false ; 
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your number");
+		int N = sc.nextInt();
+		System.out.println(isHappyNumber(N));
+
+	}
+}
+
+
+// Task 5 
+
+import java.util.Scanner;
+public class Main
+{
+	public static int toDecimal(String binary) {
+		int decimal = 0 ;
+		int base = 1 ;
+
+		for(int i = binary.length()-1 ; i>= 0 ; i--) {
+			if(binary.charAt(i) == '1') {
+				decimal+=base;
+			}
+			base = base*2 ;
+		}
+		return decimal;
+	}
+
+	public static String toHex(int dec) {
+		String hex = "";
+		String hexis = "0123456789ABCDEF";
+		while(dec > 0) {
+			int index = dec%16 ;
+			hex = hexis.charAt(index) + hex;
+			dec = dec / 16 ;
+		}
+		if(hex.equals("")) {
+			return "0";
+		}
+		else {
+			return hex;
+		}
+	}
+
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your number");
+		String binary = sc.next();
+		int decimal = toDecimal(binary);
+		String hex = toHex(decimal);
+		System.out.println(hex);
+
+	}
+
+
+// Task 7
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int arr[] = {6, 13, 28, 17, 3, 9, 11, 23, 10, 29, 12, 7};
+        System.out.println("Prime numbers :"); 
+
+		for(int i = 0 ; i < arr.length ; i++) {
+			int num = arr[i];
+			int divisor = 0 ;
+			boolean prime = true;
+			for(int j = 2 ; j*j <= num ; j++) {
+				if(num % j == 0) {
+					prime = false ;
+					break;
+				}
+			}
+			if(prime) {
+				System.out.println(i+ " : "+ num);
+			}
+		}
+		
+		
+		System.out.println("Perfect numbers :"); 
+		
+		for(int i = 0 ; i < arr.length ; i++){
+		    int num = arr[i]; 
+		    int sum = 0 ; 
+		    for(int j = 1 ; j < num ; j++){
+		       if(num%j == 0){
+		           sum+=j; 
+		       }
+		    }
+		    if(sum==num){
+		        System.out.println(i + ": " + num );
+		    }
+		}
+	}
+}
+
+
+// Task 9 
+
+import java.util.Scanner;
+public class Main
+{
+    public static int[]getScores(char[] grades){
+        int[] scores = new int[grades.length];
+        for(int i = 0 ; i <grades.length ; i++){
+            if(grades[i] == 'A' ){
+                scores[i] = 100 ; 
+            }
+            else if(grades[i]== 'B'){
+                scores[i] = 90; 
+            }
+            else if(grades[i] == 'C'){
+                scores[i] = 70 ;
+            }
+            else{
+                scores[i] = 0 ; 
+            }
+        }
+        return scores; 
+    } 
+    
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	    char[] studentGrades = new char[]{'A', 'A', 'A', 'B', 'C', 'U', 'Z'};
+	    int[] studentScores = getScores(studentGrades);
+	    System.out.println("Output expectations : ");
+	    for(int i = 0 ; i < studentScores.length ; i++){
+	        System.out.println(studentScores[i]);
+	    }
+	    
+	}
+}
+
+
+// Task 10 A 
+
+import java.util.Scanner;
+public class Main
+{
+    public static double convertToCm(double d){
+       double cm = 2.54 * d ; 
+       return cm ; 
+    } 
+    
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	    double t = convertToCm(16); 
+	    System.out.println(t + " cm");
+	    
+	}
+}
+
+// Task 10 B 
+
+import java.util.Scanner;
+public class Main
+{
+    public static double convertToCm(double d){
+       double cm = 2.54 * d ; 
+       return cm ; 
+    } 
+    
+    
+    public static double findAvgCm(double[] cheetos_inches){
+       
+        
+        double sum = 0 ; 
+        
+        double average = 0 ; 
+        
+        for(int i = 0 ; i< 5 ; i++){
+            double length_cm = convertToCm(cheetos_inches[i]);
+            sum+=length_cm; 
+        }
+        
+        average = sum / 5 ; 
+        
+        return average; 
+        
+    }
+    
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+         double[] cheetos_inches = new double[5];
+        System.out.println("Enter the lengths of 5 Cheetos in inches:");
+        for (int i = 0; i < cheetos_inches.length; i++) {
+            cheetos_inches[i] = sc.nextDouble();
+        }
+	    double average_length = findAvgCm(cheetos_inches);
+	    System.out.printf("The average Cheeto length is %.2f cm%n",average_length);
+	}
+}
+
+
+// Task 11  A & B together 
+
+
+import java.util.Scanner;
+public class Main
+{
+    public static int isVowel(String str){
+        int count = 0 ; 
+        for(int i = 0 ; i < str.length() ; i++){
+            char ch = str.charAt(i); 
+            if(ch == 'a' || ch == 'e' || ch=='i'|| ch=='o'|| ch=='u'|| ch=='A'|| ch=='E'|| ch=='I'|| ch=='O'|| ch=='U'){
+                count++; 
+            }
+        }
+        return count; 
+    }
+    
+    public static int isConsonant(String str){
+        int con_count = 0 ; 
+        boolean isCon = true; 
+        for(int i = 0 ; i < str.length() ; i++){
+            char ch = str.charAt(i); 
+            if(ch == 'a' || ch == 'e' || ch=='i'|| ch=='o'|| ch=='u'|| ch=='A'|| ch=='E'|| ch=='I'|| ch=='O'|| ch=='U'|| ch == ' '){
+                isCon = false ; 
+            }
+            else{
+                isCon = true ; 
+                con_count++; 
+            }
+        }
+        return con_count; 
+    }
+    
+    
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine(); 
+		System.out.println("Number of vowels in the string : " + isConsonant(str));
+	}
+	
+
+// Task 11 C 
+
+import java.util.Scanner;
+public class Main
+{
+    public static int isVowel(String str){
+        int count = 0 ; 
+        for(int i = 0 ; i < str.length() ; i++){
+            char ch = str.charAt(i); 
+            if(ch == 'a' || ch == 'e' || ch=='i'|| ch=='o'|| ch=='u'|| ch=='A'|| ch=='E'|| ch=='I'|| ch=='O'|| ch=='U'){
+                count++; 
+            }
+        }
+        return count; 
+    }
+    
+    public static int isConsonant(String str){
+        int con_count = 0 ; 
+        boolean isCon = true; 
+        for(int i = 0 ; i < str.length() ; i++){
+            char ch = str.charAt(i); 
+            if(ch == 'a' || ch == 'e' || ch=='i'|| ch=='o'|| ch=='u'|| ch=='A'|| ch=='E'|| ch=='I'|| ch=='O'|| ch=='U'|| ch == ' '){
+                isCon = false ; 
+            }
+            else{
+                isCon = true ; 
+                con_count++; 
+            }
+        }
+        return con_count; 
+    }
+    public static int vowelSum(String[]names){
+        
+        int sum_vowel = 0 ; 
+        
+        for(int i = 0 ; i < names.length ; i++){
+            String str = names[i]; 
+            int num = isVowel(str);
+            sum_vowel+=num ; 
+        }
+        return sum_vowel; 
+        
+    }
+    
+    public static int consonantSum(String[]names){
+        
+        int sum_con = 0 ; 
+        
+        for(int i = 0 ; i < names.length ; i++){
+            String str = names[i]; 
+            int num = isConsonant(str);
+            sum_con+=num ; 
+        }
+        return sum_con; 
+    }
+
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+		String [] names = {"Bob", "Alice", "Max", "Marry", "Rosy"};
+        System.out.println( "The total number of vowels in the array is:" + vowelSum(names));
+        System.out.println( "The total number of consonants in the array is:" + consonantSum(names));
+	}
+	
+}
+
+
+
+
+
+

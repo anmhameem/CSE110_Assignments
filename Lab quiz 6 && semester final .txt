@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[]args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		String str2 = sc.nextLine();
+
+		boolean repeat = true ;
+
+		int count = 0 ;
+
+		int i = 0 ;
+
+		while(i < str.length()) {
+			repeat = true;
+			for(int j = 0 ; j < str2.length() ; j++) {
+				if(str.charAt(i+j) != str2.charAt(j)) {
+					repeat = false;
+					break;
+				}
+			}
+			if(repeat) {
+				i+=str2.length();
+				count++;
+			}
+			else {
+				i++;
+			}
+		}
+		
+		System.out.println(count);
+
+
+	}
+}
+// Final quesiton 
+
+import java.util.Scanner; 
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in); 
+		String str = sc.next();
+		int count = sc.nextInt(); 
+		boolean bool = sc.nextBoolean(); 
+		String res = ""; 
+		if(str.length() < count){
+		    System.out.println("not possible");
+		}
+		if(bool){
+		    for(int i = count ; i < str.length() ; i++){
+		        char ch = str.charAt(i);
+		        res+= ch ; 
+		    }
+		}
+		else if(!bool){
+		    for(int j = str.length()-1-count ; j>=0 ; j--){
+		        char ch = str.charAt(j);
+		        res = ch + res ; 
+		    }
+		}
+		System.out.println(res);
+		
+	}
+}

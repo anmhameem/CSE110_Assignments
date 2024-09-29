@@ -1,0 +1,298 @@
+
+
+
+//task 1 
+import java.util.Scanner;
+public class test02{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    int num1 = sc.nextInt(); 
+    int num2 = sc.nextInt();
+    int num3 = sc.nextInt();
+    if(num1>num2 && num1 > num3){
+        System.out.println(num1); 
+    }
+    else if(num2 > num1 && num2 > num3 ){
+        System.out.println(num2);
+    }
+    else if(num3 > num1 && num3 > num2){
+        System.out.println(num3);
+    }
+  }
+}
+
+
+//Task 2
+
+import java.util.Scanner;
+public class test03{
+    public static void main(String[]args){
+        Scanner sc = new Scanner(System.in);
+            System.out.println("Enter your grade number : ");
+            int num = sc.nextInt();
+            if(num<=100 && num>=90){
+                System.out.println("A");
+            }
+            else if(num<=89 && num>= 85){
+              System.out.println("A-");
+            }
+            else if(num<=84 && num>=70){
+              System.out.println("B");
+            }
+            else if(num<= 69 && num>= 57){
+                System.out.println("C");
+            }
+            else if (num <= 56 && num>= 50){
+                System.out.println("D");
+            }
+            else if(num < 50){
+                System.out.println("F");
+            }
+               
+    }
+}
+
+
+
+
+//Task 3
+import java.util.*;
+public class test01{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your operator : ");
+    String operator = sc.nextLine();
+    System.out.println("Enter your first : ");
+    int first = sc.nextInt();
+    System.out.println("Enter your second : ");
+    int second = sc.nextInt();
+    if(operator.equals("+")){
+        int sum = first + second ;
+        System.out.println(sum);
+    }
+    else if(operator.equals("-")){
+        int sub = first - second ;
+        System.out.println(sub);
+    }
+    else if(operator.equals("/")){
+        int div = first / second ;
+        System.out.println(div);
+    }
+    else if (operator.equals("*")){
+        int mul = first * second ; 
+        System.out.println(mul);
+    }
+  }
+}
+
+//task 4
+
+import java.util.Scanner; 
+public class lab1_task2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt(); 
+        if((x%5 == 0) && (x%7 == 0)){
+            System.out.println("Divisible by both");
+        }
+        else if((x%5 == 0 ) && (x%7 != 0 )){
+            System.out.println("Invalid : Divisible by 5 Only");
+        }
+        else if ((x%5 != 0 )&& (x%7==0 )){
+            System.out.println("Invalid : Divisible by 7 Only ");
+        }
+        else if((x%5 != 0 ) && (x%7 != 0 )){
+            System.out.println("No");
+        }
+        
+    }
+}
+
+
+
+//Task 5
+import java.util.Scanner;
+public class test04{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in);
+    int year = sc.nextInt();
+    if(year %4 == 0){
+        if(year % 100 ==0){
+            if(year%400 == 0){
+                System.out.println("leap year ");
+            }
+            else{
+                System.out.println("not a leap year");
+            }
+        }
+        else{
+            System.out.println(" leap year");
+        }
+    }
+    else{
+        System.out.println("not a leap year");
+    }
+    
+  }
+}
+
+
+// task 6 
+
+import java.util.Scanner; 
+public class lab1_task2 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+       int x = sc.nextInt(); 
+       if(x < 0 ){
+           System.out.println("Number is negetive");
+       }
+       else if(x == 0){
+           System.out.println("Number is zero");
+       }
+        else if(x > 0 && x %2 == 0 ){
+            System.out.println("Number is positive and even");
+        }
+        else if(x > 0 && x%2!= 0 ){
+            System.out.println("Number is positive and odd ");
+        }
+    }
+}
+
+
+//tasl 7 
+
+import java.util.Scanner; 
+public class lab1_task2 {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int x = sc.nextInt(); 
+    if(x< 0 ){
+        System.out.println("output : " + 2 * x );
+    }
+    else if(x>= 0 && x < 2){
+        System.out.println("output : "+ (x + 1) ); 
+     } 
+     else if(x >= 2 &&  x <5){
+         System.out.println("output :"+ ((int)Math.pow(x,2) -1 ));
+     }
+     else if (x>=5 ){
+         System.out.println("output :" + ((3*(x*x)) + 2))   ;
+     }
+    }
+}
+
+// task 8 
+
+
+import java.util.Scanner; 
+public class lab1_task2 {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int id = sc.nextInt(); 
+    int year = id/1000000;
+    int remainder = id % 1000000 ; 
+    int session = remainder/100000; 
+    if(session == 1){
+        System.out.println("Student Joined Brac in Spring " + year );
+    }
+    else if(session == 2){
+        System.out.println("Student Joined Brac in Fall " + year  );
+    }
+    else if(session == 3){
+        System.out.println("Student Joined Brac in Summer " + year);
+    }
+    }
+}
+
+
+
+// task 9 
+
+import java.util.Scanner; 
+public class lab1_task2 {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    double payment = sc.nextDouble();
+    int age = sc.nextInt(); 
+    if(age >= 18 && payment<10000){
+        System.out.println("your tax amout is 0 Tk");
+    }
+    else if(age>=18 && payment>=10000 && payment<=20000){
+        System.out.println("Your tax amount is " + (payment * 0.05));
+    }
+    else if(age>= 18 &&  payment>20000){
+        System.out.println("Your tax amount is "+ (payment * 0.1 ));
+    }
+    else if(age<18){
+        System.out.println("Your tax amount is 0 Tk");
+    }
+    
+    }
+}
+
+//task 10 
+
+import java.util.Scanner; 
+public class lab1_task2 {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    float num1 = sc.nextFloat();
+    float num2 = sc.nextFloat(); 
+    float num3 = sc.nextFloat(); 
+    if(num1>num2 && num1>num3){
+        System.out.println("Maximum number is "+ num1 );
+      
+    }
+    else if(num2>num1 && num2 > num3){
+        System.out.println("Maximum number is "+ num2);
+    }
+    else if(num3>num2 && num3>num1){
+        System.out.println("Maximum number is " + num3);
+    }
+    
+    if(num1<num2 && num1<num3){
+        System.out.println("Minimum number is "+ num1 );
+      
+    }
+    else if(num2<num1 && num2 < num3){
+        System.out.println("Minimum number is "+ num2);
+    }
+    else if(num3<num2 && num3<num1){
+        System.out.println("Minimum number is " + num3);
+    }
+    
+    }
+}
+
+
+// task 11
+
+import java.util.Scanner; 
+public class lab1_task2 {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int side1 = sc.nextInt();
+    int side2 = sc.nextInt(); 
+    int side3 = sc.nextInt(); 
+    if(side1 == side2 && side2 == side3 && side3 == side1 ){
+        System.out.println("This is an Equilateral triangle");
+    }
+    else if(side1 == side2 && side3!= side2 ){
+        System.out.println("This is a Isosceles triangle");
+    }
+    else if(side2 == side3 && side1!= side3){
+        System.out.println("This is a Isosceles triangle");
+    }
+    else if(side1 == side3 && side2!= side3 ){
+        System.out.println("This is a Isosceles triangle");
+    }
+    else if(side1!=side2 && side2!=side3 && side3 != side1 ){
+        System.out.println("This is a Scalene Triangle ");
+    }
+    }
+}
+
+
+//task 12 
+

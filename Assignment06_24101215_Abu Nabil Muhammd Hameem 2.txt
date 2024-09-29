@@ -1,0 +1,265 @@
+// Task 1 
+
+import java.util.Scanner; 
+public class Main{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	String str = sc.nextLine(); 
+	String res = ""; 
+	for(int i = 0 ; i <= str.length()-1 ; i++){
+	    char ch = str.charAt(i);
+	    if(ch>= 'a' && ch<='z'){
+	        ch -=(char) 32 ; 
+	        res+=ch;  
+	    }
+	    else{
+	        res+=ch ;
+	    }
+	}
+	System.out.print(res); 
+	}
+}
+
+
+// Task 2 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		String res = "";
+		for(int i = str.length() -1 ; i>= 0; i--) {
+			char ch = str.charAt(i);
+			res+= ch ;
+		}
+		if(str.equals(res)) {
+			System.out.print("true");
+		}
+		else {
+			System.out.print("false");
+		}
+	}
+}
+
+// Task 3 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		char split = sc.next().charAt(0); 
+		String res = "";
+		for(int i = 0 ; i<= str.length() -1; i++) {
+			char ch = str.charAt(i);
+			if(ch == split){
+			    System.out.println();
+			}
+			else{
+			   	System.out.print(ch);
+			}
+		}
+	}
+}
+
+
+// Task 4
+
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		String res = "";
+		for(int i = str.length() -1 ; i>= 0; i--) {
+			char ch = str.charAt(i);
+			res+= ch ;
+		}
+		System.out.print(res);
+	}
+}
+
+
+
+// Task 5 
+
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		String res = "";
+		int vowel = 0 ;
+		int consonent = 0 ;
+		for(int i = 0 ; i<= str.length()-1; i++) {
+			char ch = str.charAt(i);
+				if(ch == 'A' || ch == 'E'||ch=='I'||ch=='O'||ch=='U'|| ch == 'a' || ch == 'e'||ch=='i'||ch=='o'||ch=='u') {
+					vowel++;
+				}
+				else {
+					consonent++;
+				}
+		}
+		if(vowel%3 == 0 && consonent%5 == 0 ) {
+			System.out.println("Aaarr! Me Plunder!!");
+		}
+		else {
+			System.out.println("Blimey! No Plunder!!");
+		}
+	}
+}
+
+
+// Task 6 
+import java.util.Scanner; 
+public class Main{
+	public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	String str = sc.nextLine(); 
+	str = str + " ";
+	String res = ""; 
+	String sen = ""; 
+	for(int i = 0 ; i <= str.length()-1 ; i++){
+	    char ch = str.charAt(i);
+	    if(ch!=' '){
+	        sen+=ch ; 
+	    }
+	    else{
+	        res = sen + " " + res; 
+	        sen = "";
+	    }
+	}
+	System.out.print(res); 
+	}
+}
+
+
+// Task 7 
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		str = str.toLowerCase();
+		String str2 = sc.nextLine();
+		str2 = str2.toLowerCase();
+		String res = "";
+	    boolean flag = false ; 
+		for(int i = 0 ; i <= str.length()-1 ; i++) {
+			char ch = str.charAt(i);
+			for(int j = 0 ; j<= str2.length()-1; j++) {
+				char ch2 = str2.charAt(j);
+				if(ch==ch2) {
+				  flag = true ; 
+				}
+			}	
+				if(flag ==false) {
+					res+=ch;
+				}
+				flag = false ;
+			}
+			for(int i = 0 ; i <= str2.length()-1 ; i++) {
+			char ch2 = str2.charAt(i);
+			for(int j = 0 ; j<= str.length()-1; j++) {
+				char ch = str.charAt(j);
+				if(ch2==ch) {
+					flag = true ; 
+				}
+			}
+				 if(flag == false ) {
+				  res+=ch2;
+				}
+				flag = false ; 
+			}
+			
+			res = res.toUpperCase();
+		System.out.println(res);
+	}
+}
+
+
+// task 8 
+
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();    
+		String res = "";
+		for(int i = 0 ; i <= str.length()-1 ; i++) {
+			char ch = str.charAt(i);
+			if(i%2 != 0 ){
+			    if(ch>='a' && ch<= 'z'){
+			    ch = (char) (ch-32);
+			       res+=ch;
+			    }
+			    else{
+			       res+=ch; 
+			    }
+			}
+			else if(i%2 == 0 ){
+			    if(ch>='A' && ch<= 'Z'){
+			    ch = (char) (ch+32);
+			    res+=ch;
+			    }
+			    else{
+			       res+=ch; 
+			    }
+			}
+		}
+		
+		System.out.println(res);
+	}
+}
+
+
+//Task 9 
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();    
+        
+        boolean hasUppercase = false;
+        boolean hasLowercase = false;
+        boolean hasDigit = false;
+        boolean hasSpecialChar = false;
+        boolean isLongEnough = str.length() >= 8;
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch >= 'A' && ch <= 'Z') {
+                hasUppercase = true;
+            } else if (ch >= 'a' && ch <= 'z') {
+                hasLowercase = true;
+            } else if (ch >= '0' && ch <= '9') {
+                hasDigit = true;
+            } else {
+                hasSpecialChar = true;
+            }
+        }
+
+        if (isLongEnough && hasUppercase && hasLowercase && hasDigit && hasSpecialChar) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
+    }
+}
+
+
+

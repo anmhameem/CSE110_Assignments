@@ -1,0 +1,185 @@
+// Task 1 
+
+
+import java.util.*; 
+public class nestedLoop{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in); 
+    int number = 2; 
+    int counter = 0 ; 
+    int N = sc.nextInt(); 
+    int primeCount = 0 ; 
+    while(true){   
+    for(int divisor = 1 ; divisor <= number ; divisor++){
+         if(number % divisor == 0 ){
+           counter++; 
+         }
+      }
+      if(counter == 2){
+        primeCount++; 
+         System.out.println(number);
+     }
+      
+      if(primeCount == N ){
+        break; 
+      }
+      number++; 
+      counter = 0 ; 
+    }
+  }
+}
+
+// Task 2 
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("The value of N : "); 
+		int N = sc.nextInt();
+		int y = 0 ; 
+		
+		for(int i = 1 ; i<=N ; i++){
+		    int temp = 0; 
+		   for(int j = 1 ; j <=i ; j++){
+		       temp+=j; 
+		   }
+		   y-=temp; 
+		}
+		System.out.print("The value of y : " + y); 
+	}
+}
+
+
+
+
+// Task 3 
+
+
+import java.util.*; 
+public class nestedLoop_3{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in); 
+    int number; 
+    int counter = 0 ;   
+    while(true){
+      
+      System.out.println("Enter your number: "); 
+      number = sc.nextInt(); 
+      
+      if(number%2 == 0 && number > 0){
+        for(int divisor = 1 ; divisor <= number ; divisor++){
+          if(number % divisor == 0 ){
+            counter++; 
+          }
+        }
+        System.out.println(number +"has " + counter + " divisors");
+      }
+    
+      else if (number% 2 != 0){
+        break; 
+      }
+        counter = 0;
+      }
+  }
+}
+
+
+
+// task 5 
+
+
+import java.util.*; 
+public class nestedLoop_5{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in); 
+    System.out.pritnln("Please enter number of rows");
+    int row = sc.nextInt();  
+    System.out.pritnln("Please enter number of columns");
+    int col = sc.nextInt(); 
+    for(int rowCount = 1 ; rowCount <= row ; rowCount++){
+      for(int colCount = 1 ; colCount <= col ; colCount++){
+        System.out.print(colCount); 
+      }
+      System.out.println(); 
+    }
+  }
+}
+
+
+
+
+// Task 6 
+
+
+import java.util.*; 
+public class nestedLoop_6{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in); 
+    int row = sc.nextInt();  
+    for(int rowCount = 1 ; rowCount <= row ; rowCount++){
+      for(int spCount = 1 ; spCount <= (row - rowCount); spCount++){
+        System.out.print(" "); 
+      }
+      for(int colCount = 1 ; colCount <= rowCount ; colCount++){
+        System.out.print(colCount); 
+      }
+      System.out.println(); 
+    }
+  }
+}
+
+
+// Task 7 
+
+import java.util.*; 
+public class nestedLoop_7{
+  public static void main(String[]args){
+    Scanner sc = new Scanner(System.in); 
+    int row = sc.nextInt();  
+    for(int rowCount = 1 ; rowCount <= row ; rowCount++){
+      for(int spCount = 1 ; spCount <= (row - rowCount); spCount++){
+        System.out.print(" "); 
+      }
+      for(int colCount = 1 ; colCount <= (2*rowCount-1) ; colCount++){
+        System.out.print(colCount); 
+      }
+      System.out.println(); 
+    }
+  }
+}
+
+
+ 
+// Task 8 
+
+
+import java.util.*;
+public class Main {
+	public static void main(String[]args) {
+		Scanner sc = new Scanner(System.in);
+		int start = sc.nextInt();
+		int end = sc.nextInt();
+		int num = 0 ;
+		int digit ;
+		int sum = 0;
+		int count = 0 ; 
+		int temp ; ;
+		for(int i = start ; i <= end ; i++) {
+			temp = i ; 
+			sum = 0 ; 
+			while(temp != 0) {
+				digit = temp % 10;
+				temp = temp / 10 ;
+				sum +=(int) Math.pow(digit,3);
+			}
+			if(i==sum){
+			    System.out.println("Armstrong number : " + sum );
+			}
+		}
+	}
+}
+
+
